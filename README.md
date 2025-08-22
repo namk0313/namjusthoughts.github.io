@@ -24,7 +24,14 @@ cumulative distribution function
 2. Every Xi has the same probability distribution
 
 **variance**
-E(X^2) - (E(X))^2
+E(X^2) - (E(X))^2 = E(X^2) - µ^2
+or 
+E[(X-µ)^2]
+- V(aX+b) = a^2 * V(x)
+
+
+**Moment generating function**
+
 
 
 Sampling distribution of a Statistic
