@@ -2,10 +2,14 @@
 
 # Motivation
 
-In my last semester at Vanderbilt (Spring of 2025) , I met Dr.Ravi Shah who was a Dr.Gamazon's new collaborator. I generated some data for them to write a grant on cardiorespiratory fitness. I am now at Penn Vet (Fall 2025) and finished orientation. The first-years toured the New Bolton Center and I learned that sports medicine is a field in veterinary medicine. I wondered if I can do a TWAS on race horses and see what proteins indicate healthy horse heart and if I can apply that to human medicine. 
+In my last semester at Vanderbilt (Spring of 2025) , I met Dr.Ravi Shah who was a Dr.Gamazon's new collaborator. I generated some data for them to write a grant on cardiorespiratory fitness. I am now at Penn Vet (Fall 2025) and finished orientation. The first-years toured the New Bolton Center and I learned that sports medicine is a field in veterinary medicine. I wondered if I can do a TWAS on race horses and see what proteins indicate healthy crf in the blood and if I can apply that to human medicine. I think it would be interesting since they would be under stronger evolutionary pressure due to aritifical selection 
 
 To do more in-depth research, I wanted to review what I know and have a fundamental understanding of any overlooked concepts during first semester of vet school, when I probably would not be doing any research. 
 
+
+# Vet school aspirations
+
+If I consider the UK Biobank, the sample size outweighs any kind of research I might be doing in the near future. Thus, to better leverage what I have in front of me and do something sepcial by pusuing veterinary medicine, I must consider the unique nature of veterinary medicine. 
 
 # Goal
 1. Consolidate what I know so far about genomics, transcriptomics, and proteomics
