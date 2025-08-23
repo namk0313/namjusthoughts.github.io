@@ -6,7 +6,6 @@ In my last semester at Vanderbilt (Spring of 2025) , I met Dr.Ravi Shah who was 
 
 To do more in-depth research, I wanted to review what I know and have a fundamental understanding of any overlooked concepts during first semester of vet school, when I probably would not be doing any research. 
 
-
 # Vet school aspirations
 
 If I consider the UK Biobank, the sample size outweighs any kind of research I might be doing in the near future. Thus, to better leverage what I have in front of me and do something sepcial by pusuing veterinary medicine, I must consider the unique nature of veterinary medicine. 
@@ -17,6 +16,8 @@ If I consider the UK Biobank, the sample size outweighs any kind of research I m
 3. Think about research questions
 4. Learn the github md file syntax
 5. Gain more knowledge on evolutionary biology
+
+Questions I had: non-matrix factorization, bayesian methods, 
 
 # Statistics
 
@@ -34,20 +35,26 @@ cumulative distribution function
 2. Every Xi has the same probability distribution
 
 **variance**
-E(X^2) - (E(X))^2 = E(X^2) - µ^2
+
+$E(X^2) - (E(X))^2 = E(X^2) - µ^2
+
 or 
-E[(X-µ)^2]
+
+$E[(X-µ)^2]
 - V(aX+b) = a^2 * V(x)
 
 
 **Moment generating function**
 (kth moment of random variable X is E(X^k), while the kth moment about the mean of X is E[(X-µ)^k], where µ = E(X))
-$M_x(t) = E(e^(tX)) = sum_{x} e^tx p(x)
-$M_Y(t) = e^bt M_x(at)
 
-M_x(0) is the sum of all probabilities
+$ M_x(t) = E(e^{t X}) = sum_{x} e^{t x} p(x)
+
+$ M_Y(t) = e^{b t} M_x(at)
+
+$ M_x(0) is the sum of all probabilities
 
 **Binomial Distribution**
+
 $$
 b(x;n,p) = P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}
 B(x;n,p) = P(X \leq k) = \sum_{y=0}^{x} b(y;n,p)
@@ -56,9 +63,9 @@ V(X) = np(1-p)
 $$
 
 Using the moment generating function for binomial distribution
-$$
-M_x(t) = E(e^tX) = \sum_{x} e^tx p(x) = \sum_{x=0}^n e^tx \binom{n}{x}p^x(1-p)^(n-x) = \sum_{x=0}^n \binom{n}{x}(pe^t)^x(1-p)^(n-x) = (pe^t + 1 - p)^n
 
+$$
+M_x(t) = E(e^{t X}) = \sum_{x} e^{t x} p(x) = \sum_{x=0}^n e^{t x} \binom{n}{x}p^x(1-p)^{n-x} = \sum_{x=0}^n \binom{n}{x}(pe^t)^x(1-p)^{n-x} = (pe^t + 1 - p)^n
 $$
 
 
@@ -96,6 +103,12 @@ Under coefficients, (Intercept) and x have column "Estimate"
 # Transcriptomics
 
 ## RNA-seq
+source: youtube
+https://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-0881-8
+https://hhj6212.github.io/sequencing/informatics/2021/04/10/CPM-TPM.html
+for analysis: https://pmc.ncbi.nlm.nih.gov/articles/PMC4670015/
+https://pmc.ncbi.nlm.nih.gov/articles/PMC6096346/
+quantification: [https://www.rna-seqblog.com/rpkm-fpkm-and-tpm-clearly-explained/](https://www.youtube.com/watch?v=TTUrtCY2k-w)
 
 ### How it is done
 1. extract RNA
@@ -111,7 +124,28 @@ Under coefficients, (Intercept) and x have column "Estimate"
    - align high quality reads to a genome
    - count number of reads per gene
 7. Normalize
-    - 
+    - Raw count: affected by transcript length, total number of reads, and sequencing biases
+    - RPKM (reads per kilobase of exon model per million reads):
+      $$
+  
+      $$
+         - for single end RNA-seq
+         - within-sample normalization that remove feature-length and library-size effects
+         - kilobase: length of fragments
+             - longer genes will have more reads mapped
+         - million: sequencing depth
+             - runs with more depth will have more reads mapped to each gene 
+             
+    - FPKM (fragments per kilobase of exon model per million mapped reads): within-sample normalized transcript expression measure
+         - paired end RNA-seq: both ends can map so give two reads. FPKM accounts
+                          for that
+         - kilobase: length of fragments
+         - million: sequencing depth 
+           
+    - TPM (transcripts per million):
+          - between-sample comparison
+          1. normalize for gene length (kb) by dividing from raw count, giving reads per kilobase
+          2. normalize for sequencing depth by dividing the sum of each replication by million. This gives a scaling factor, which can be used to divide reads per kilobase with.
    
 Things to consider to quantify RNA expression across different genes, replicates, and experiments, two factors must be controlled for:
 -	**The different number of reads** (if there are inconsistences in the preparation of your **sequencing library**, you might get more cDNA in one experiment than another, leading to more reads across all genes, but that doesn’t indicate an increase in expression across all genes)
