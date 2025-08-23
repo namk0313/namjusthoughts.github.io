@@ -2,7 +2,7 @@
 
 # Motivation
 
-In my last semester at Vanderbilt (Spring of 2025) , I met Dr.Ravi Shah who was a Dr.Gamazon's new collaborator. I generated some data for them to write a grant on cardiorespiratory fitness. I am now at Penn Vet (Fall 2025) and finished orientation. The first-years toured the New Bolton Center and I learned that sports medicine is a field in veterinary medicine. I wondered if I can do a TWAS on race horses and see what proteins indicate healthy crf in the blood and if I can apply that to human medicine. I think it would be interesting since they would be under stronger evolutionary pressure due to aritifical selection 
+In my last semester at Vanderbilt (Spring of 2025) , I met Dr.Ravi Shah who was a Dr.Gamazon's new collaborator. I generated some data for them to write a grant on cardiorespiratory fitness. I am now at Penn Vet (Fall 2025) and finished orientation. The first-years toured the New Bolton Center and I learned that sports medicine is a field in veterinary medicine. I wondered if I can do a TWAS on race horses and see what proteins indicate healthy crf in the blood and if I can apply that to human medicine. I think it would be interesting since they would be under stronger evolutionary pressure due to aritifical selection. Also..consider longitudinal aspects too because animals' lifespan are typically shorter
 
 To do more in-depth research, I wanted to review what I know and have a fundamental understanding of any overlooked concepts during first semester of vet school, when I probably would not be doing any research. 
 
@@ -47,7 +47,22 @@ $M_Y(t) = e^bt M_x(at)
 
 M_x(0) is the sum of all probabilities
 
-Binomial Distribution
+**Binomial Distribution**
+$$
+b(x;n,p) = P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}
+B(x;n,p) = P(X \leq k) = \sum_{y=0}^{x} b(y;n,p)
+E(X) = np
+V(X) = np(1-p)
+$$
+
+Using the moment generating function for binomial distribution
+$$
+M_x(t) = E(e^tX) = \sum_{x} e^tx p(x) = \sum_{x=0}^n e^tx \binom{n}{x}p^x(1-p)^(n-x) = \sum_{x=0}^n \binom{n}{x}(pe^t)^x(1-p)^(n-x) = (pe^t + 1 - p)^n
+
+$$
+
+
+
 
 Sampling distribution of a Statistic
 e.g. distribution of the mean px(x), distribution of 
