@@ -21,12 +21,13 @@ If I consider the UK Biobank, the sample size outweighs any kind of research I m
 # Statistics
 
 **Bernoulli random variable**
+
 **Discrete random variable**
+
 **Continuous random variable** 
 
 probability mass function
 cumulative distribution function
-
 
 **independent and identically distributed**
 1. The Xis are independent
@@ -40,8 +41,13 @@ E[(X-µ)^2]
 
 
 **Moment generating function**
+(kth moment of random variable X is E(X^k), while the kth moment about the mean of X is E[(X-µ)^k], where µ = E(X))
+$M_x(t) = E(e^(tX)) = sum_{x} e^tx p(x)
+$M_Y(t) = e^bt M_x(at)
 
+M_x(0) is the sum of all probabilities
 
+Binomial Distribution
 
 Sampling distribution of a Statistic
 e.g. distribution of the mean px(x), distribution of 
