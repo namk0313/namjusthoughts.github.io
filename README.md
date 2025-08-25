@@ -17,7 +17,7 @@ If I consider the UK Biobank, the sample size outweighs any kind of research I m
 4. Learn the github md file syntax
 5. Gain more knowledge on evolutionary biology
 
-Questions I had: non-matrix factorization, bayesian methods, 
+Questions I had: non-matrix factorization, bayesian methods, batch effect, regressing out covariates
 
 # Statistics
 
@@ -137,12 +137,21 @@ quantification: [https://www.rna-seqblog.com/rpkm-fpkm-and-tpm-clearly-explained
              - runs with more depth will have more reads mapped to each gene 
              
     - FPKM (fragments per kilobase of exon model per million mapped reads): within-sample normalized transcript expression measure
+  
+    $$
+      [Number of fragments]/[(transcript length/1000)/(total reads)/10^6)]
+    $$
          - paired end RNA-seq: both ends can map so give two reads. FPKM accounts
                           for that
          - kilobase: length of fragments
          - million: sequencing depth 
            
     - TPM (transcripts per million):
+  
+    $$
+      TPM = 10^6 * ((reads mapped to transcript)/(transcript length))/Sum(reads mapped to transcript/transcript length) = 10^6 * RPKM/Sum(RPKM)
+    $$ 
+    
           - between-sample comparison
           1. normalize for gene length (kb) by dividing from raw count, giving reads per kilobase
           2. normalize for sequencing depth by dividing the sum of each replication by million. This gives a scaling factor, which can be used to divide reads per kilobase with.
